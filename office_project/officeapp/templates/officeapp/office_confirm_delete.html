@@ -1,0 +1,7 @@
+<h2>Delete Office</h2>
+ <p>Are you sure you want to delete "{{ office.name }}"?</p> 
+ <form method="post"> 
+    {% csrf_token %} 
+    <button type="submit">Yes, Delete</button> 
+    <a href="{% url 'office_list' %}">Cancel</a> 
+</form>

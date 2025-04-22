@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Office List</title>
+</head>
+<body>
+    <h1>All Offices</h1>
+    <a href="{% url 'office_create' %}">Add New Office</a>
+    <ul>
+        {% for office in offices %}
+            <li>
+                {{ office.name }} - {{ office.location }} ({{ office.employees_count }} employees)
+              
+                <a href="{% url 'office_update' office.id %}">Edit</a>
+
+                <a href="{% url 'office_delete' office.id %}">Delete</a>
+            </li>
+        {% empty %}
+            <li>No offices found.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
